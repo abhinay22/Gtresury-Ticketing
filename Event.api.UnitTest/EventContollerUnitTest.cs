@@ -32,9 +32,10 @@ public class EventContollerUnitTest
     // checks if the service layer is called from CreateActionContrtoller
     public void CreateEventController_Calls_ServicelayerMethod()
     {
-       CreatedAtActionResult result=(CreatedAtActionResult)_contoller.CreateEvent(null);
-
         svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).Returns(true);
+
+        CreatedAtActionResult result=(CreatedAtActionResult)_contoller.CreateEvent(null);
+    
 
         svc.Verify(x=>x.CreateEvent(It.IsAny<CreateEventDTO>()),Times.Once);
 

@@ -20,7 +20,9 @@ namespace Event.api.Controllers
         [HttpPost("CreateEvent")]
         public IActionResult CreateEvent([FromBody] CreateEventDTO dto)
         {
-            return View();
+          bool result= _repo.CreateEvent(dto);
+
+            return CreatedAtAction("",null);
         }
     }
 }
