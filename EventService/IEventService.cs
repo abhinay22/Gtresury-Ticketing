@@ -9,7 +9,7 @@ namespace EventService
 {
     public interface IEventService
     {
-        public bool CreateEvent(CreateEventDTO eventData);
+        public Task<int> CreateEvent(CreateEventDTO eventData);
 
         public bool CancelEvent(int eventId);
 

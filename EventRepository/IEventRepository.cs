@@ -9,7 +9,7 @@ namespace EventTicketing.Core
 {
     public interface IEventRepository
     {
-        void AddEvent(Event eventData);
+       public Task<int> AddEvent(Event eventData);
 
         void DeleteEvent(int eventId);
 

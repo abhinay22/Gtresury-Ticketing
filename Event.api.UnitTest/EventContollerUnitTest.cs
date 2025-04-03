@@ -31,11 +31,11 @@ public class EventContollerUnitTest
 
     [Fact]
     // checks if the service layer is called from CreateActionContrtoller
-    public void CreateEventController_Calls_ServicelayerMethod()
+    public async void CreateEventController_Calls_ServicelayerMethod()
     {
-        svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).Returns(true);
+        svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).ReturnsAsync(1);
 
-        CreatedAtActionResult result=(CreatedAtActionResult)_contoller.CreateEvent(null);
+        CreatedAtActionResult result= (CreatedAtActionResult) await _contoller.CreateEvent(null);
 
         svc.Verify(x=>x.CreateEvent(It.IsAny<CreateEventDTO>()),Times.Once);
 
@@ -43,9 +43,9 @@ public class EventContollerUnitTest
 
     [Fact]
     //checks that CreatedAtAction is returned by CreateEvent Action method
-    public void CreateEventActions_Returns_201_and_CreatedAtAction()
+    public async void CreateEventActions_Returns_201_and_CreatedAtAction()
     {
-        svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).Returns(true);
+         svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).ReturnsAsync(1);
         //generate dummy Event Data
         var fixture = new Fixture();
         var dto=fixture.Create<CreateEventDTO>();

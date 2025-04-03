@@ -10,7 +10,7 @@ namespace EventTicketing.Infrastructure.DBContext
 {
     public class EventDBContext : DbContext
     {
-        public EventDBContext()
+        public EventDBContext(DbContextOptions options):base(options)
         {
             
         }

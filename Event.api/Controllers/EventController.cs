@@ -4,7 +4,7 @@ using EventService.DTO;
 
 namespace Event.api.Controllers
 {
-    [Route("api/{contoller}")]
+    [Route("api/[controller]")]
     public class EventController : Controller
     {
         private readonly IEventService _repo;
@@ -17,12 +17,18 @@ namespace Event.api.Controllers
             _logger = logger;
         }
 
-        [HttpPost("CreateEvent")]
-        public IActionResult CreateEvent([FromBody] CreateEventDTO dto)
+        [HttpGet("GetEvent")]
+        public async Task<IActionResult> GetEvent([FromQuery] int EventId)
         {
-          bool result= _repo.CreateEvent(dto);
+            return Ok();
+        }
 
-            return CreatedAtAction("",null);
+        [HttpPost("CreateEvent")]
+        public async Task<IActionResult> CreateEvent([FromBody] CreateEventDTO dto)
+        {
+          int eventId= await _repo.CreateEvent(dto);
+
+            return CreatedAtAction("GetEvent", new { EventId = eventId }, dto);
         }
     }
 }

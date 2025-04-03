@@ -14,7 +14,7 @@
 
         public VenueDTO venue { get; set; }
 
-        public List<PricingTier> pricingTier{get;set;}
+        public List<PricingTierDTO>  pricingTier{get;set;}
 
         public int totalQuantity {  get; set; }
     }

@@ -12,10 +12,11 @@ namespace EventRepository
         {
              _dbContext = context;
         }
-        public async void AddEvent(Event eventData)
+        public async Task<int> AddEvent(Event eventData)
         {
            _dbContext.Events.Add(eventData);
             await _dbContext.SaveChangesAsync();
+            return eventData.EventId;
         }
 
         public async void  DeleteEvent(int eventId)

@@ -12,7 +12,7 @@ namespace EventTicketing.Core.Entities
 
         public string tierName { get; set; }
 
-        public string price { get; set; }
+        public decimal price { get; set; }
 
         public int totalTicket { get; set; }
 

@@ -1,3 +1,6 @@
+using AutoMapper;
+using EventService;
+using EventTicketing.Core;
 using EventTicketing.Infrastructure.DBContext;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,10 +15,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<EventDBContext>(options=>
 {
-    var connectionString = "Server=localhost;Database=EventDBContext;User Id=sa;Password=Arora1234!;";
+    var connectionString = "Server=localhost;Database=EventDBContext;User Id=sa;Password=Arora1234!;TrustServerCertificate=True;";
     options.UseSqlServer(connectionString);
 }
 );
+builder.Services.AddAutoMapper(typeof(EventMapper));
+builder.Services.AddScoped<IEventService, EventService.EventService>();
+builder.Services.AddScoped<IEventRepository,EventRepository.EventRepository>();
 
 var app = builder.Build();
 
