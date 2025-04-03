@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EventRepository\EventTicketing.Core.csproj" />
-  </ItemGroup>
-
 </Project>

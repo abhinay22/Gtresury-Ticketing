@@ -1,5 +1,6 @@
 namespace Event.api.UnitTest;
 
+using AutoFixture;
 using Event.api.Controllers;
 using EventService;
 using EventService.DTO;
@@ -35,9 +36,24 @@ public class EventContollerUnitTest
         svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).Returns(true);
 
         CreatedAtActionResult result=(CreatedAtActionResult)_contoller.CreateEvent(null);
-    
 
         svc.Verify(x=>x.CreateEvent(It.IsAny<CreateEventDTO>()),Times.Once);
 
     }
+
+    [Fact]
+    //checks that CreatedAtAction is returned by CreateEvent Action method
+    public void CreateEventActions_Returns_201_and_CreatedAtAction()
+    {
+        svc.Setup(y => y.CreateEvent(It.IsAny<CreateEventDTO>())).Returns(true);
+        //generate dummy Event Data
+        var fixture = new Fixture();
+        var dto=fixture.Create<CreateEventDTO>();
+        var result= _contoller.CreateEvent(dto);
+
+        Assert.IsType<CreatedAtActionResult>(result);
+
+        
+    }
+
 }

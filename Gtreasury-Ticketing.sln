@@ -5,9 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event.api.UnitTest", "Event.api.UnitTest\Event.api.UnitTest.csproj", "{7D2BD491-5D53-4EE0-B648-4CA946901C41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.api", "Event.api\Event.api.csproj", "{7266E4A0-F522-46F4-A724-5757934D9DAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event.api", "Event.api\Event.api.csproj", "{7266E4A0-F522-46F4-A724-5757934D9DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventService", "EventService\EventService.csproj", "{A018B50C-0B9C-4D5F-9CF9-9EF6303FA2A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventService", "EventService\EventService.csproj", "{A018B50C-0B9C-4D5F-9CF9-9EF6303FA2A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketing.Core", "EventRepository\EventTicketing.Core.csproj", "{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketing.Infrastructure", "EventTicketing.Infrastructure\EventTicketing.Infrastructure.csproj", "{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{A018B50C-0B9C-4D5F-9CF9-9EF6303FA2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A018B50C-0B9C-4D5F-9CF9-9EF6303FA2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A018B50C-0B9C-4D5F-9CF9-9EF6303FA2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

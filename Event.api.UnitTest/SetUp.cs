@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Event.api.UnitTest
 {
-    public class SetUp
+    public class Helper
     {
+        public Helper()
+        {
+            
+        }
+
+        public void Get_Valid_CreateEventDto()
+        { 
+
+
+        }
     }
 }

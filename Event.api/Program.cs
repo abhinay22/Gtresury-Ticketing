@@ -1,3 +1,6 @@
+using EventTicketing.Infrastructure.DBContext;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<EventDBContext>(options=>
+{
+    var connectionString = "Server=localhost;Database=EventDBContext;User Id=sa;Password=Arora1234!;";
+    options.UseSqlServer(connectionString);
+}
+);
 
 var app = builder.Build();
 

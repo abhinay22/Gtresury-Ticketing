@@ -11,13 +11,13 @@ namespace EventService
     {
         public bool CreateEvent(CreateEventDTO eventData);
 
-        public bool CancelEvent(Guid eventId);
+        public bool CancelEvent(int eventId);
 
-        public bool UpdateEventDetails(Guid eventId,EventDTO eventData);
+        public bool UpdateEventDetails(int eventId,EventDTO eventData);
 
 
         public List<EventDTO> ViewAllEvents();
 
-        public EventDTO ViewEvent(Guid eventId);
+        public EventDTO ViewEvent(int eventId);
     }
 }
