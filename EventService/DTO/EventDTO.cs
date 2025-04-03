@@ -8,7 +8,7 @@ namespace EventService.DTO
 {
     public class EventDTO
     { 
-        public Guid eventId { get; set; }
+        public int eventId { get; set; }
         public string eventName { get; set; }
 
         public string eventDescription { get; set; }

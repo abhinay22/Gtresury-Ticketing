@@ -15,9 +15,9 @@ namespace EventTicketing.Core
 
         void UpdateEvent(int eventId, Event eventData);
 
-        List<Event> GetAllEvents();
+        Task<List<Event>> GetAllEvents();
 
-        Event GetEvent(int eventId);
+        Task<Event> GetEvent(int eventId);
 
 
 

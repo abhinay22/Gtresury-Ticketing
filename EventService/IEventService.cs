@@ -16,8 +16,8 @@ namespace EventService
         public bool UpdateEventDetails(int eventId,EventDTO eventData);
 
 
-        public List<EventDTO> ViewAllEvents();
+        public Task<List<EventDTO>> ViewAllEvents();
 
-        public EventDTO ViewEvent(int eventId);
+        public Task<EventDTO> ViewEvent(int eventId);
     }
 }

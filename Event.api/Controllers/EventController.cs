@@ -20,7 +20,28 @@ namespace Event.api.Controllers
         [HttpGet("GetEvent")]
         public async Task<IActionResult> GetEvent([FromQuery] int EventId)
         {
-            return Ok();
+           EventDTO dto= await _repo.ViewEvent(EventId);
+            if (dto != null)
+            {
+                return Ok(dto);
+            }
+            else
+            {
+               return NotFound();
+            }
+        }
+        [HttpGet("GetAllEvents")]
+        public async Task<IActionResult> GetEvents()
+        {
+            List<EventDTO> dtos = await _repo.ViewAllEvents();
+            if (dtos != null)
+            {
+                return Ok(dtos);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost("CreateEvent")]

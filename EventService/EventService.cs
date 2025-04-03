@@ -33,14 +33,30 @@ namespace EventService
             throw new NotImplementedException();
         }
 
-        public List<EventDTO> ViewAllEvents()
+        public async Task<List<EventDTO>> ViewAllEvents()
         {
-            throw new NotImplementedException();
+            List<Event> events= await _repo.GetAllEvents();
+            if (events == null)
+            {
+                return null;
+            }
+            else
+            {
+                return _mapper.Map<List<Event>,List<EventDTO>>(events);
+            }
         }
 
-        public EventDTO ViewEvent(int eventId)
+        public async  Task<EventDTO> ViewEvent(int eventId)
         {
-            throw new NotImplementedException();
+          Event ent= await _repo.GetEvent(eventId);
+            if (ent == null)
+            {
+                return null;
+            }
+            else
+            {
+                return _mapper.Map<Event, EventDTO>(ent);
+            }
         }
     }
 }

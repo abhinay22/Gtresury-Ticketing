@@ -16,6 +16,10 @@ namespace EventService
             CreateMap<CreateEventDTO, Event>().ForMember(x=>x.EventId,y=>y.Ignore());
             CreateMap<VenueDTO, Venue>().ForMember(x => x.VenueId, y => y.Ignore());
             CreateMap<PricingTierDTO,PricingTier>().ForMember(x=>x.PricingTierId,y=>y.Ignore());
+            CreateMap<PricingTier, PricingTierDTO>();
+            CreateMap<Event, EventDTO>();
+            CreateMap<Venue, VenueDTO>();
+            // CreateMap<List<Event>, List<EventDTO>>();
         }
     }
 }
