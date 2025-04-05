@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event.api", "Event.api\Even
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventService", "EventService\EventService.csproj", "{A018B50C-0B9C-4D5F-9CF9-9EF6303FA2A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketing.Core", "EventRepository\EventTicketing.Core.csproj", "{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventTicketing.Core", "EventRepository\EventTicketing.Core.csproj", "{2051A974-B384-4E04-B9B7-6CECB7CFA8EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketing.Infrastructure", "EventTicketing.Infrastructure\EventTicketing.Infrastructure.csproj", "{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventTicketing.Infrastructure", "EventTicketing.Infrastructure\EventTicketing.Infrastructure.csproj", "{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventContract", "EventContract\EventContract.csproj", "{0B16D253-7941-4661-8FAE-82B7F834424F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF7CF2CF-E7D6-48DD-8D7F-FDDDB1A5A14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B16D253-7941-4661-8FAE-82B7F834424F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B16D253-7941-4661-8FAE-82B7F834424F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B16D253-7941-4661-8FAE-82B7F834424F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B16D253-7941-4661-8FAE-82B7F834424F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

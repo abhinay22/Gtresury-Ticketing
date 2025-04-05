@@ -15,7 +15,7 @@ namespace EventService.DTO
 
         public DateTime startDate { get; set; }
 
-
+        public bool isÀctive { get; set; }
         public DateTime endDate { get; set; }
 
         public VenueDTO venue { get; set; }

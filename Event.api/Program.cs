@@ -1,17 +1,33 @@
 using AutoMapper;
+using EventContract;
 using EventService;
 using EventTicketing.Core;
 using EventTicketing.Infrastructure.DBContext;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMassTransit(configure =>
+{
+    configure.SetKebabCaseEndpointNameFormatter();
+    //configure.AddConsumer<EventActivated>();
+    configure.UsingRabbitMq((context, conf) =>
+    {
+        conf.Host("amqp://localhost:15672", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+    });
+
+});
 
 builder.Services.AddDbContext<EventDBContext>(options=>
 {

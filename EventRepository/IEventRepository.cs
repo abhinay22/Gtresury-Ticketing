@@ -13,7 +13,7 @@ namespace EventTicketing.Core
 
         void DeleteEvent(int eventId);
 
-        void UpdateEvent(int eventId, Event eventData);
+        Task<Event> UpdateEvent(int eventId, Event eventData);
 
         Task<List<Event>> GetAllEvents();
 

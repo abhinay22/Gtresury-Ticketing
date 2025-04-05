@@ -42,15 +42,18 @@ namespace EventRepository
 
         public async Task<Event> GetEvent(int eventId)
         {
-            return await _dbContext.Events.
+            return await _dbContext.Events.AsNoTracking<Event>() .
                 Include(x => x.pricingTier).
                  Include(x => x.venue).
                 FirstOrDefaultAsync(x => x.EventId == eventId);
         }
 
-        public void UpdateEvent(int eventId, Event eventData)
+        public async Task<Event> UpdateEvent(int eventId, Event eventData)
         {
-            throw new NotImplementedException();
+            _dbContext.Events.Update(eventData);
+            await _dbContext.SaveChangesAsync();
+            var updatedEvent = _dbContext.Entry(eventData).Entity;
+            return updatedEvent;
         }
     }
 }

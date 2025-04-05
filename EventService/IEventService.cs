@@ -13,7 +13,7 @@ namespace EventService
 
         public bool CancelEvent(int eventId);
 
-        public bool UpdateEventDetails(int eventId,EventDTO eventData);
+        public Task<EventDTO> UpdateEventDetails(int eventId,EventDTO eventData);
 
 
         public Task<List<EventDTO>> ViewAllEvents();
