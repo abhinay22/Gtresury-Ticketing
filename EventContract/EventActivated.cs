@@ -2,7 +2,7 @@
 {
     public class EventActivated
     {
-        public int EventId { get; set; }
+        public int eventId { get; set; }
 
         public string eventName { get; set; }
 

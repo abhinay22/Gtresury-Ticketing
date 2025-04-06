@@ -8,12 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
-    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.31" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EventContract\EventContract.csproj" />
-    <ProjectReference Include="..\EventRepository\EventTicketing.Core.csproj" />
+    <ProjectReference Include="..\Ticketing.Core\Ticketing.Core.csproj" />
   </ItemGroup>
 
 </Project>

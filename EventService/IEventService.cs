@@ -19,5 +19,7 @@ namespace EventService
         public Task<List<EventDTO>> ViewAllEvents();
 
         public Task<EventDTO> ViewEvent(int eventId);
+
+        public Task PublishEventToBroker(EventDTO dto);
     }
 }

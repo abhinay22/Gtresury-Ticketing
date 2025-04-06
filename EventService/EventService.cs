@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using EventContract;
 using EventService.DTO;
 using EventTicketing.Core;
 using EventTicketing.Core.Entities;
+using MassTransit;
+using Event = EventTicketing.Core.Entities.Event;
 
 namespace EventService
 {
@@ -9,10 +12,12 @@ namespace EventService
     {
         public readonly IEventRepository _repo;
         private readonly IMapper _mapper;
-        public EventService(IEventRepository repo, IMapper map)
+        private readonly IPublishEndpoint _endpoint;
+        public EventService(IEventRepository repo, IMapper map, IPublishEndpoint endpoint)
         {
             _repo = repo;
             _mapper = map;
+            _endpoint = endpoint;
         }
 
         public bool CancelEvent(int eventId)
@@ -26,6 +31,12 @@ namespace EventService
             int id = await _repo.AddEvent(obj);
             return id;
 
+        }
+
+        public async Task PublishEventToBroker(EventDTO dto)
+        {
+            EventActivated activated = _mapper.Map<EventDTO, EventActivated>(dto);
+            await _endpoint.Publish<EventActivated>(activated);
         }
 
         public async Task<EventDTO> UpdateEventDetails(int eventId, EventDTO eventData)

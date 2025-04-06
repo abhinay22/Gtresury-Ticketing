@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EventContract;
 using EventService.DTO;
 using EventTicketing.Core.Entities;
 using System;
@@ -14,12 +15,16 @@ namespace EventService
         public EventMapper()
         {
             CreateMap<CreateEventDTO, Event>().ForMember(x=>x.EventId,y=>y.Ignore());
-            CreateMap<VenueDTO, Venue>().ForMember(x => x.VenueId, y => y.Ignore());
-            CreateMap<PricingTierDTO,PricingTier>().ForMember(x=>x.PricingTierId,y=>y.Ignore());
-            CreateMap<PricingTier, PricingTierDTO>();
+            CreateMap<VenueDTO, EventTicketing.Core.Entities.Venue>().ForMember(x => x.VenueId, y => y.Ignore());
+            CreateMap<PricingTierDTO, EventTicketing.Core.Entities.PricingTier>();
+            CreateMap<EventTicketing.Core.Entities.PricingTier, PricingTierDTO>();
             CreateMap<Event, EventDTO>();
             CreateMap<EventDTO, Event>();
-            CreateMap<Venue, VenueDTO>();
+            CreateMap<EventTicketing.Core.Entities.Venue, VenueDTO>();
+            CreateMap<VenueDTO, EventContract.Venue>(); ;
+            CreateMap<PricingTierDTO, EventContract.PricingTier>();
+            CreateMap<EventDTO, EventActivated>();
+            
             // CreateMap<List<Event>, List<EventDTO>>();
         }
     }

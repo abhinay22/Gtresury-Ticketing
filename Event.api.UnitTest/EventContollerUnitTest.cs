@@ -49,7 +49,8 @@ public class EventContollerUnitTest
         //generate dummy Event Data
         var fixture = new Fixture();
         var dto=fixture.Create<CreateEventDTO>();
-        var result= _contoller.CreateEvent(dto);
+        var result= await _contoller.CreateEvent(dto);  
+       
 
         Assert.IsType<CreatedAtActionResult>(result);
 

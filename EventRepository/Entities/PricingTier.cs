@@ -16,6 +16,6 @@ namespace EventTicketing.Core.Entities
 
         public int totalTicket { get; set; }
 
-        public Event Event { get; set; }
+
     }
 }

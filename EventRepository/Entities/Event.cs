@@ -22,7 +22,7 @@ namespace EventTicketing.Core.Entities
 
         public Venue venue { get; set; }
 
-        public virtual ICollection<PricingTier> pricingTier { get; set; }
+        public  ICollection<PricingTier> pricingTier { get; set; }
 
         public int totalQuantity { get; set; }
     }

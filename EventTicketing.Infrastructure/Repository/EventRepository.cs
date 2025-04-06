@@ -42,9 +42,9 @@ namespace EventRepository
 
         public async Task<Event> GetEvent(int eventId)
         {
-            return await _dbContext.Events.AsNoTracking<Event>() .
-                Include(x => x.pricingTier).
-                 Include(x => x.venue).
+            return await _dbContext.Events.AsNoTracking().
+                Include(x => x.pricingTier).AsNoTracking().
+                 Include(x => x.venue).AsNoTracking().
                 FirstOrDefaultAsync(x => x.EventId == eventId);
         }
 
