@@ -1,0 +1,33 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-container
+    ports:
+      - "1433:1433"
+    environment:
+      MSSQL_SA_PASSWORD: "Arora1234!"
+      ACCEPT_EULA: 'Y'
+    volumes:
+      - sqlserverdata:/var/opt/mssqldata
+
+  rabbit:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-container
+    ports:
+      - "8080:15672"
+      - "5672:5672"
+    user: root
+
+  cacheservice:
+    image: redis:6.2-alpine
+    restart: always
+    container_name: redisserver
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass Arora1234!
+    volumes:
+      - cache:/data
+
+volumes:
+  sqlserverdata:
+  cache:
