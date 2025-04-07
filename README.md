@@ -52,11 +52,12 @@ Ticket.api
 
 Tickting api listens to the EventActivated event emitted by Event.api and consumes it to create its copy of Event metadata
 
-| api endpoint                                             |    endpoint job                               | Verb   |
-------------------------------------------------------------------------------------------------
-| /api/v1/Ticketing/GetAvailableTicketDetails/{id}         |  Gets all the tickets available for a event   | Get   |
-| /api/v1/Ticketing/BookTicket                      |      | reserves the ticket in cache with TTL of 5    | POST  |
-| /api/v1/Ticketing/MakePayment/{id}                       |  Makes a payment against a booking Id          | Post |
+| API Endpoint                                             | Endpoint Job                                      | Verb  |
+|----------------------------------------------------------|---------------------------------------------------|--------|
+| `/api/v1/Ticketing/GetAvailableTicketDetails/{id}`       | Gets all the tickets available for an event       | GET    |
+| `/api/v1/Ticketing/BookTicket`                           | Reserves the ticket in cache with TTL of 5        | POST   |
+| `/api/v1/Ticketing/MakePayment/{id}`                     | Makes a payment against a booking ID              | POST   |
+
 
 
 # Please note there are two additional jobs/services required for this app
