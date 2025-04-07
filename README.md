@@ -65,7 +65,7 @@ Tickting api listens to the EventActivated event emitted by Event.api and consum
 1 . EventReporting API (not implemented): This would have listened to the TicketConfirmed Event of the Ticket api and created its database 
   according to it's quering requirement 
 
-2. Currently, tickets expired in the  cache are not getting evaluated . -For this, we would need a redis pub/sub job or cron job to look
+2. Currently, tickets expired in the  cache are not getting evaluated. -For this, we would need a redis pub/sub job or cron job to look
    for expired tickets and update the sql database according .,
 
 
