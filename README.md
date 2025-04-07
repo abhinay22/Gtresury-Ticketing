@@ -37,12 +37,13 @@ Rabbitmq is used as a message broker, Mass tranist is used as wa rapper around r
 Event.api
 
 
-| api endpoint                             |    endpoint job                          | Verb   |
-------------------------------------------------------------------------------------------------
-| /api/v1/Event/GetEvent?{EventID=2}         |  gets an exisiting event via eventId  | Get   |
-| /api/v1/Event/changeEventData/{id}         | updates the event metadata            | Put   |
-| api/v1/Event/CreateEvent                   |  Creates a new event                  | Post  |
-| /api/v1/Event/activateEvent/{id}           | patch event details                   | Patch |
+| API Endpoint                              | Endpoint Job                          | Verb  |
+|-------------------------------------------|----------------------------------------|--------|
+| `/api/v1/Event/GetEvent?{EventID=2}`      | Gets an existing event via eventId     | GET    |
+| `/api/v1/Event/changeEventData/{id}`      | Updates the event metadata             | PUT    |
+| `/api/v1/Event/CreateEvent`               | Creates a new event                    | POST   |
+| `/api/v1/Event/activateEvent/{id}`        | Patch event details                    | PATCH  |
+
 
 More details on api are available on swagger files in the Documents directory of the repo
 
